@@ -1,0 +1,15 @@
+{
+  "name": "reportcraft",
+  "version": "1.0.0",
+  "description": "ReportCraft — College PPT & Report Generator. Run both servers with: npm start",
+  "private": true,
+  "scripts": {
+    "start": "concurrently --names \"BACKEND,FRONTEND\" --prefix-colors \"cyan,magenta\" \"npm run backend\" \"npm run frontend\"",
+    "frontend": "npm --prefix frontend run dev",
+    "backend": "cd backend && venv\\Scripts\\python.exe -m uvicorn main:app --reload --port 8000",
+    "test": "cd backend && venv\\Scripts\\python.exe -m pytest tests/ -v"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
